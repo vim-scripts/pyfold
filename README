@@ -1,0 +1,11 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=781
+
+This script acts as a syntax-file addon to the standard python.vim syntax file.  When expression folding is used, all classes and functions will be folded automatically.
+
+Each fold ends upon one of two conditions:
+
+1) A line is detected with an indent less than or equal to the previous fold beginning line (that is not in a multi-line string).
+
+2) A line with the same indent as a class or def statement is detected that contains the string "#\s*end\s\+\<\(class\|def\)\>".   (i.e. "    #end class MyClass").
+
+Note that script vimscript #515 provides a similar functionality, but includes marker folding and limited block statement folding.  This script was written to provide class and function folding only, allow "#end \(class\|def\)" lines to end a fold and still be included in the fold, and to increase the speed creating folds in large files.
